@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:new, :create, :destroy, :show]
-  resources :hats, only: [:show]
+  resources :hats, only: [:new, :create, :show]
 
 
   get '/login', to: 'sessions#new'
