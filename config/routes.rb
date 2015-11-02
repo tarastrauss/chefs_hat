@@ -6,8 +6,9 @@ Rails.application.routes.draw do
 
   get '/sessions', to: 'sessions#show'
 
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:new, :create, :destroy, :show]
+  resources :hats, only: [:show]
 
 
   get '/login', to: 'sessions#new'

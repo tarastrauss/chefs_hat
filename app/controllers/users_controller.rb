@@ -13,7 +13,10 @@ class UsersController < ApplicationController
     end
   end
 
-
+  def show
+    @user = User.find(params[:id])
+    @hats = @user.hats
+  end
 
   private
     # Implement Strong Params
