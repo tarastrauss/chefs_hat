@@ -1,0 +1,32 @@
+<h2> <%= @hat.name %> Hat </h2>
+
+<h4> Members </h4>
+<% @memberships.each do |membership| %>
+  <tr>
+  <td><%= membership.user.username %></td>
+  </tr>
+<% end %>
+
+<%= form_for(@memberships, :as => 'membership_form') do |f| %>
+  <% if @memberships.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @memberships.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+
+<div class="actions"><%= f.submit %></div>
+<% end %>
+
+</br>
+</br>
+<h4> Recipes </h4>

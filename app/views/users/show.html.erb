@@ -1,14 +1,14 @@
 <h1> My Hats </h1>
 <%= link_to 'New Hat', new_hat_path %>
+</br>
 
 <% @hats.each do |hat| %>
-
   <tr>
-
     <td><%= hat.name %></td>
     <% if current_user == @user %>
-      <td><%= link_to 'Show', hat %></td>
-      <td><%= link_to 'Delete', hat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'View Hat', hat %></td>
+      <td><%= link_to 'Delete Hat', hat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>
   </tr>
+    </br>
 <% end %>
