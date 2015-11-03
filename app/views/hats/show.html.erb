@@ -5,26 +5,18 @@
   <tr>
   <td><%= membership.user.username %></td>
   </tr>
+  </br>
 <% end %>
 
-<%= form_for(@memberships, :as => 'membership_form') do |f| %>
-  <% if @memberships.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @memberships.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<% if @hat.user_id == current_user.id %>
+  <%= form_for(@memberships.new) do |f| %>
+    <div class="field">
+      <%= f.label :add_member %>
+      <%= text_field_tag 'membership[username]' %>
+      <%= f.hidden_field :hat_id, :value => @hat.id %>
     </div>
+    <div class="actions"><%= f.submit %></div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </div>
-
-<div class="actions"><%= f.submit %></div>
 <% end %>
 
 </br>

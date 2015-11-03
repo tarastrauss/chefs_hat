@@ -7,7 +7,10 @@
     <td><%= hat.name %></td>
     <% if current_user == @user %>
       <td><%= link_to 'View Hat', hat %></td>
-      <td><%= link_to 'Delete Hat', hat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% if hat.user_id == current_user.id %>
+         <td><%= link_to 'Delete Hat', hat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+
     <% end %>
   </tr>
     </br>

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:new, :create, :destroy, :show]
   resources :hats, only: [:new, :create, :show, :destroy]
-
+  resources :memberships, only: [:create, :destroy]
 
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'
