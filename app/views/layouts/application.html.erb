@@ -10,8 +10,9 @@
 </head>
 <body>
 
+
+<div class="navbar-header font header">
 <p class = "navbar-left">
-<div class="navbar-header font" id = "header">
   <% if current_user %>
     Welcome, Chef <%= current_user.username %>
     &nbsp;&nbsp;|&nbsp;&nbsp;
@@ -21,8 +22,11 @@
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <%= link_to 'My Hats', user_path(session[:user_id]) %>
   <% end %>
+  </p>
   </div>
-</p>
+<strong> <p class = "right font header"> Chef's Hat </p></strong>
+
+
 </br>
 
 <%= yield %>

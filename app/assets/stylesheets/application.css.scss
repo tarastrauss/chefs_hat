@@ -33,7 +33,7 @@ body {
   font-family: tahoma, arial;
 }
 
-#header {
+.header {
   font-size: 24px;
 }
 .grey {
@@ -47,4 +47,11 @@ body {
 
 .page-head {
   font-size: 60px;
+  text-align: center;
+}
+
+
+
+.right {
+  float: right;
 }

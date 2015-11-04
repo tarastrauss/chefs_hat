@@ -1,3 +1,4 @@
+</br>
 <h2 class = "font page-head"> <%= @hat.name %> Chef's Hat </h2>
 <% if flash[:notice] %>
   <p><%= flash[:notice] %> </p>
@@ -27,11 +28,11 @@
 <%= form_for(@recipes.new) do |f| %>
   <div class="field form-group inline">
     <%= f.label :new_recipe %>
-    <%= text_field_tag 'recipe[name]' %>
+    <%= text_field_tag 'recipe[name]', nil, class: "inline form-control form-custom" %>
     <%= f.hidden_field :hat_id, :value => @hat.id %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
-  <div class="actions"><%= f.submit class: "btn btn-default grey inline" %></div>
+  <div class="actions inline"><%= f.submit class: "btn btn-default grey inline" %></div>
 <% end %>
 
 
@@ -54,13 +55,12 @@
 
 <% if @hat.user_id == current_user.id %>
   <%= form_for(@memberships.new) do |f| %>
-    <div class="field">
+    <div class="field inline">
       <%= f.label :add_Chef %>
-      <%= text_field_tag 'membership[username]'  %>
+      <%= text_field_tag 'membership[username]', nil, class: "inline form-control form-custom" %>
       <%= f.hidden_field :hat_id, :value => @hat.id %>
     </div>
-    </br>
-    <div class="actions"><%= f.submit class: "btn btn-default grey" %></div>
+    <div class="actions inline"><%= f.submit class: "btn btn-default grey inline" %></div>
   <% end %>
 <% end %>
 
