@@ -16,6 +16,7 @@ class HatsController < ApplicationController
   end
 
   def show
+
     @hat = Hat.find(params[:id])
     @memberships = @hat.memberships
     @recipes = Recipe.where(hat_id: @hat.id)

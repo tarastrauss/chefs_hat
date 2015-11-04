@@ -1,55 +1,66 @@
-<h2> <%= @hat.name %> Hat </h2>
+<h2 class = "font page-head"> <%= @hat.name %> Chef's Hat </h2>
 <% if flash[:notice] %>
   <p><%= flash[:notice] %> </p>
 <% end %>
-
-<h4> Recipes </h4>
+</br>
+<h4 class = "plain-font"> Recipes </h4>
 
 <% @recipes.each do |recipe| %>
+<table class = "table table-hover table-responsive plain-font">
   <tr>
-  <td><%= recipe.name %></td>
-  <td> <%= link_to 'View', recipe_path(:id => recipe.id) %> </td>
-  <% if recipe.user_id == current_user.id %>
-  <td> <%= link_to 'Edit', edit_recipe_path(:id => recipe.id) %> </td>
-  <td> <%= link_to 'Delete', recipe, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
-  <% end %>
+    <td class = "column"><%= recipe.name %></td>
+    <td> <%= link_to 'View', recipe_path(:id => recipe.id), class: "column" %> </td>
+    <% if recipe.user_id == current_user.id %>
+      <td> <%= link_to 'Edit', edit_recipe_path(:id => recipe.id), class: "column"%> </td>
+      <td> <%= link_to 'Delete', recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: "column" %> </td>
+    <% else %>
+      <td class = "column">&nbsp;</td>
+      <td class = "column">&nbsp;</td>
+            <td class = "column">&nbsp;</td>
+      <td class = "column">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+    <% end %>
   </tr>
-  </br>
 <% end %>
+</table>
 
 <%= form_for(@recipes.new) do |f| %>
-  <div class="field">
+  <div class="field form-group inline">
     <%= f.label :new_recipe %>
     <%= text_field_tag 'recipe[name]' %>
     <%= f.hidden_field :hat_id, :value => @hat.id %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
-  <div class="actions"><%= f.submit %></div>
+  <div class="actions"><%= f.submit class: "btn btn-default grey inline" %></div>
 <% end %>
 
 
+
 </br>
 </br>
 
-<h4> Members </h4>
+<h4 class = "plain-font"> Chefs </h4>
+<table class = "table table-hover table-responsive">
 <% @memberships.each do |membership| %>
   <tr>
-  <td><%= membership.user.username %></td>
-  <% if @hat.user_id == current_user.id %>
-    <td> <%= link_to 'Delete Chef', membership, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
-  <% end %>
+    <td class = "column"><%= membership.user.username %></td>
+    <% if @hat.user_id == current_user.id && membership.user_id != @hat.user_id%>
+      <td> <%= link_to 'Delete Chef', membership, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+    <% end %>
   </tr>
-  </br>
+
 <% end %>
+</table>
 
 <% if @hat.user_id == current_user.id %>
   <%= form_for(@memberships.new) do |f| %>
     <div class="field">
       <%= f.label :add_Chef %>
-      <%= text_field_tag 'membership[username]' %>
+      <%= text_field_tag 'membership[username]'  %>
       <%= f.hidden_field :hat_id, :value => @hat.id %>
     </div>
-    <div class="actions"><%= f.submit %></div>
+    </br>
+    <div class="actions"><%= f.submit class: "btn btn-default grey" %></div>
   <% end %>
 <% end %>
 

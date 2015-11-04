@@ -10,9 +10,10 @@
 </head>
 <body>
 
-<p>
+<p class = "navbar-left">
+<div class="navbar-header font" id = "header">
   <% if current_user %>
-    Welcome, <%= current_user.username %>
+    Welcome, Chef <%= current_user.username %>
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <%= link_to 'Logout', session_path('dummy'), method: :delete %>
     &nbsp;&nbsp;|&nbsp;&nbsp;
@@ -20,7 +21,9 @@
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <%= link_to 'My Hats', user_path(session[:user_id]) %>
   <% end %>
+  </div>
 </p>
+</br>
 
 <%= yield %>
 

@@ -1,3 +1,39 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#welcome-center {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#welcome {
+  display: inline-block;
+  font-family: 'Amatic SC', cursive;
+  font-size: 80px;
+  margin-top: -40px;
+}
+
+#best-place {
+  margin-top: -60px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 40px;
+}
+#welcome-hat{
+  margin-top: -40px;
+  max-width: 150px;
+  display: inline-block;
+}
+
+img {
+  width: 100%;
+}
+
+#login{
+  max-width: 400px;
+  padding-left: 150px;
+}
+
+#login-text{
+  font-size: 16px;
+}

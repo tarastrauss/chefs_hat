@@ -1,20 +1,29 @@
-<h1> <%= @recipe.name %> </h1>
+</br>
+<h1 class = "font page-head recipe-name"> <%= @recipe.name %> </h1>
+<div class = "plain-font recipe-table">
 <%= form_for @recipe do |f| %>
   <div class="field">
     <%= f.label :instructions %>
-    <%= f.text_area :instructions, :cols => "30", :rows => "10" %>
+    <%= f.text_area :instructions, :cols => "60", :rows => "10", class: "form-control  " %>
   </div>
+  </br>
+
   <div class="field">
     <%= f.label :cook_method %>
-    <%= f.text_field :cook_method %>
+    <%= f.text_field :cook_method, class: "form-control form-custom right" %>
   </div>
+  </br>
   <div class="field">
     <%= f.label :cook_temperature %>
-    <%= f.text_field :cook_temp %>
+    <%= f.text_field :cook_temp, class: "form-control form-custom right"  %>
   </div>
+    </br>
+
   <div class="field">
     <%= f.label :cook_time %>
-    <%= f.text_field :cook_time %>
+    <%= f.text_field :cook_time, class: "form-control form-custom right"  %>
   </div>
-  <div class="actions"><%= f.submit %></div>
+  </br>
+  <div class="actions"><%= f.submit class: "btn btn-default grey"%></div>
 <% end %>
+</div>

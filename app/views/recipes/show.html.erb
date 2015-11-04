@@ -1,7 +1,14 @@
-<h1> <%= @recipe.name %> </h1>
+</br>
+<div id = "recipe-box">
+<h2 class = "font page-head recipe-name"> <%= @recipe.name %> </h2> <h4 class = "font recipe-name sub-head"> by <%= @user.username %></h4>
+<%= link_to 'Back to hat', @hat, class: "font recipe-name sub-head" %>
 
-<p> Cooking time: <%= @recipe.cook_time %> </p>
-<p> Cooking temperature: <%= @recipe.cook_temp %> </p>
-<p> Cooking Method: <%= @recipe.cook_method %> </p>
 
-<p> Instructions: <%= @recipe.instructions %> </p>
+</br>
+
+<p class = "plain-font"> Cooking time: <%= @recipe.cook_time %> </p>
+<p class = "plain-font"> Cooking temperature: <%= @recipe.cook_temp %> </p>
+<p class = "plain-font"> Cooking Method: <%= @recipe.cook_method %> </p>
+
+<p class = "plain-font"> Instructions: <%= @recipe.instructions %> </p>
+</div>

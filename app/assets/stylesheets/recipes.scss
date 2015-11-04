@@ -1,3 +1,30 @@
 // Place all the styles related to the recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.recipe-name {
+  display: inline-block;
+  margin-top: 0;
+}
+
+.recipe-table{
+  max-width: 400px;
+}
+
+.right {
+  float: right;
+}
+
+.sub-head {
+  font-size: 26px;
+  margin-left: 4px;
+}
+
+#recipe-box {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color:  #C7C8BD;
+  border-radius: 4px;
+  padding: 0 6px 3px 14px;
+}

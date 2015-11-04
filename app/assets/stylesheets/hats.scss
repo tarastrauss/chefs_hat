@@ -1,3 +1,16 @@
 // Place all the styles related to the hats controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.hat-name {
+  font-size: 30px;
+}
+
+.column {
+  max-width: 40px;
+  text-align:left;
+}
+
+.inline {
+  display: inline-block;
+}

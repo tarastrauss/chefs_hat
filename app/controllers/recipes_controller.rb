@@ -16,6 +16,8 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @user = User.find(@recipe.user_id)
+    @hat = Hat.find(@recipe.hat_id)
   end
 
   def edit
@@ -33,6 +35,13 @@ class RecipesController < ApplicationController
   end
 
   def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+
+    respond_to do |format|
+      format.html { redirect_to hat_path(@recipe.hat_id), notice: 'Recipe was successfully removed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
