@@ -18,8 +18,12 @@ class HatsController < ApplicationController
   def show
     @hat = Hat.find(params[:id])
     @memberships = @hat.memberships
+    @recipes = Recipe.where(hat_id: @hat.id)
   end
 
+  def recipe
+    @recipe = Recipe.new
+  end
 
 
   def destroy
@@ -41,6 +45,10 @@ class HatsController < ApplicationController
 
   def hat_params
       params.require(:hat).permit(:name, :user_id)
+  end
+
+  def recipe_params
+      params.require(:recipe).permit(:instructions, :cook_method, :cook_time, :image_uri, :user_id, :hat_id, :name)
   end
 
 end

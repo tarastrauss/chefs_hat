@@ -1,0 +1,11 @@
+
+<%= form_for @recipe do |f| %>
+
+  <div class="field">
+    <%= f.label :new_recipe %>
+    <%= text_field_tag 'recipe[name]' %>
+    <%= f.hidden_field :hat_id, :value => @hat.id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+  <div class="actions"><%= f.submit %></div>
+<% end %>

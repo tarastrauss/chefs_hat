@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102191624) do
+ActiveRecord::Schema.define(version: 20151103233249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,22 @@ ActiveRecord::Schema.define(version: 20151102191624) do
   add_index "memberships", ["hat_id"], name: "index_memberships_on_hat_id", using: :btree
   add_index "memberships", ["user_id"], name: "index_memberships_on_user_id", using: :btree
 
+  create_table "recipes", force: :cascade do |t|
+    t.text     "instructions"
+    t.string   "cook_method"
+    t.integer  "cook_time"
+    t.string   "image_uri"
+    t.integer  "user_id"
+    t.integer  "hat_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "name"
+    t.integer  "cook_temp"
+  end
+
+  add_index "recipes", ["hat_id"], name: "index_recipes_on_hat_id", using: :btree
+  add_index "recipes", ["user_id"], name: "index_recipes_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -50,4 +66,6 @@ ActiveRecord::Schema.define(version: 20151102191624) do
   add_foreign_key "hats", "users"
   add_foreign_key "memberships", "hats"
   add_foreign_key "memberships", "users"
+  add_foreign_key "recipes", "hats"
+  add_foreign_key "recipes", "users"
 end

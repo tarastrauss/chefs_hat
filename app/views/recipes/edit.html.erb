@@ -1,0 +1,20 @@
+<h1> <%= @recipe.name %> </h1>
+<%= form_for @recipe do |f| %>
+  <div class="field">
+    <%= f.label :instructions %>
+    <%= f.text_area :instructions, :cols => "30", :rows => "10" %>
+  </div>
+  <div class="field">
+    <%= f.label :cook_method %>
+    <%= f.text_field :cook_method %>
+  </div>
+  <div class="field">
+    <%= f.label :cook_temperature %>
+    <%= f.text_field :cook_temp %>
+  </div>
+  <div class="field">
+    <%= f.label :cook_time %>
+    <%= f.text_field :cook_time %>
+  </div>
+  <div class="actions"><%= f.submit %></div>
+<% end %>

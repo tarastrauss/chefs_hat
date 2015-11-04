@@ -1,9 +1,43 @@
 <h2> <%= @hat.name %> Hat </h2>
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %> </p>
+<% end %>
+
+<h4> Recipes </h4>
+
+<% @recipes.each do |recipe| %>
+  <tr>
+  <td><%= recipe.name %></td>
+  <td> <%= link_to 'View', recipe_path(:id => recipe.id) %> </td>
+  <% if recipe.user_id == current_user.id %>
+  <td> <%= link_to 'Edit', edit_recipe_path(:id => recipe.id) %> </td>
+  <td> <%= link_to 'Delete', recipe, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+  <% end %>
+  </tr>
+  </br>
+<% end %>
+
+<%= form_for(@recipes.new) do |f| %>
+  <div class="field">
+    <%= f.label :new_recipe %>
+    <%= text_field_tag 'recipe[name]' %>
+    <%= f.hidden_field :hat_id, :value => @hat.id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+  <div class="actions"><%= f.submit %></div>
+<% end %>
+
+
+</br>
+</br>
 
 <h4> Members </h4>
 <% @memberships.each do |membership| %>
   <tr>
   <td><%= membership.user.username %></td>
+  <% if @hat.user_id == current_user.id %>
+    <td> <%= link_to 'Delete Chef', membership, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+  <% end %>
   </tr>
   </br>
 <% end %>
@@ -11,7 +45,7 @@
 <% if @hat.user_id == current_user.id %>
   <%= form_for(@memberships.new) do |f| %>
     <div class="field">
-      <%= f.label :add_member %>
+      <%= f.label :add_Chef %>
       <%= text_field_tag 'membership[username]' %>
       <%= f.hidden_field :hat_id, :value => @hat.id %>
     </div>
@@ -19,6 +53,6 @@
   <% end %>
 <% end %>
 
-</br>
-</br>
-<h4> Recipes </h4>
+
+
+

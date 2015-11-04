@@ -6,6 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<%= csrf_meta_tag %>
 </head>
 <body>
 
@@ -14,6 +15,8 @@
     Welcome, <%= current_user.username %>
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <%= link_to 'Logout', session_path('dummy'), method: :delete %>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <%= link_to 'Edit My Profile', edit_user_path(session[:user_id]) %>
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <%= link_to 'My Hats', user_path(session[:user_id]) %>
   <% end %>
