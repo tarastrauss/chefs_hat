@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy, :show]
   resources :hats, only: [:new, :create, :show, :destroy]
   resources :memberships, only: [:create, :destroy]
+  resources :comments, only: [:new, :create, :destroy, :show]
   resources :recipes, only: [:new, :create, :show, :destroy, :update, :edit]
 
   get '/hats/recipe', to: 'hats#recipe'

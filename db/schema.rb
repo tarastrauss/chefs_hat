@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151104233811) do
+ActiveRecord::Schema.define(version: 20151105062634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "recipe_id"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["recipe_id"], name: "index_comments_on_recipe_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "hats", force: :cascade do |t|
     t.string   "name"
@@ -43,10 +54,15 @@ ActiveRecord::Schema.define(version: 20151104233811) do
     t.string   "image_uri"
     t.integer  "user_id"
     t.integer  "hat_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "name"
     t.string   "cook_temp"
+    t.text     "ingredients"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "recipes", ["hat_id"], name: "index_recipes_on_hat_id", using: :btree
@@ -67,6 +83,8 @@ ActiveRecord::Schema.define(version: 20151104233811) do
     t.datetime "image_updated_at"
   end
 
+  add_foreign_key "comments", "recipes"
+  add_foreign_key "comments", "users"
   add_foreign_key "hats", "users"
   add_foreign_key "memberships", "hats"
   add_foreign_key "memberships", "users"

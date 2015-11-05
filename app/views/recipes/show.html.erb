@@ -1,14 +1,42 @@
 </br>
 <div id = "recipe-box">
-<h2 class = "font page-head recipe-name"> <%= @recipe.name %> </h2> <h4 class = "font recipe-name sub-head"> by <%= @user.username %></h4>
-<%= link_to 'Back to hat', @hat, class: "font recipe-name sub-head" %>
+  <div id = "title">
+    <h2 class = "font page-head recipe-name"> <%= @recipe.name %> </h2>
+    <h4 class = "font recipe-name sub-head"> by <%= @user.username %></h4>
+    <%= link_to 'Back to hat', @hat, class: "font recipe-name sub-head" %>
+    </br>
+    <%= image_tag @recipe.image.url(:medium), class: "food-pic" %>
+  </div>
+  <p class = "plain-font"> Cooking time: <%= @recipe.cook_time %> </p>
+  <p class = "plain-font"> Cooking temperature: <%= @recipe.cook_temp %> </p>
+  <p class = "plain-font"> Cooking Method: <%= @recipe.cook_method %> </p>
+  <p class = "plain-font list"> Ingredients:  </p>
+  <% @recipe.ingredients.split(/\r\n/).each do |ingredient| %>
+    <p class = "indent"> <%= ingredient %> </p>
+  <% end %>
+  <p class = "plain-font list"> Instructions:  </p>
+  <% @recipe.instructions.split(/\r\n/).each do |line| %>
+    <p class = "indent"> <%= line %> </p>
+  <% end %>
+</div>
 
+<% @comments.each do |comment| %>
+  <% user = comment.user %>
+  <div class = "comment">
+    <p> Tip from Chef <%= user.username %> at <%= comment.created_at %> </p>
+    <%= comment.content %>
+  </div>
+<% end %>
 
-</br>
-
-<p class = "plain-font"> Cooking time: <%= @recipe.cook_time %> </p>
-<p class = "plain-font"> Cooking temperature: <%= @recipe.cook_temp %> </p>
-<p class = "plain-font"> Cooking Method: <%= @recipe.cook_method %> </p>
-
-<p class = "plain-font"> Instructions: <%= @recipe.instructions %> </p>
+<div id= "comment-form">
+  <%= form_for (@comments.new) do |f| %>
+  <div class="field ">
+    <%= f.label :comment %>
+    <%= f.text_area :content, :cols => "60", :rows => "10", class: "form-control" %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :recipe_id, :value => @recipe.id %>
+    </br>
+    <div class="actions inline"><%= f.submit class: "btn btn-default grey inline"%></div>
+    <% end %>
+  </div>
 </div>

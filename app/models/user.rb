@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
   has_many :memberships
   has_many :hats, through: :memberships
   has_many :recipes
-  has_attached_file :image, styles: {large: "600x600>", medium: "300x300>", thumb: "50x50>" }, default_url: "/images/:style/missing.png"
+  has_many :comments
+  has_attached_file :image, styles: {large: "600x600>", medium: "300x300>", thumb: "50x50#" }, default_url: "default_image.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
 end

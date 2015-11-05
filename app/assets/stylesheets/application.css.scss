@@ -22,6 +22,7 @@
 
 body {
   padding: 20px;
+  padding-bottom: 80px;
   background-color: #E6E9A2;
 }
 
@@ -43,6 +44,7 @@ body {
 .form-custom {
   max-width: 150px;
   display: inline-block;
+  margin-top: -10px;
 }
 
 .page-head {
@@ -51,8 +53,9 @@ body {
 }
 
 .profile-pic {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
 }
 
 

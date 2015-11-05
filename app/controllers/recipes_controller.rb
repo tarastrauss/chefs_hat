@@ -18,6 +18,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @user = User.find(@recipe.user_id)
     @hat = Hat.find(@recipe.hat_id)
+    @comments = @recipe.comments
   end
 
   def edit
@@ -45,9 +46,8 @@ class RecipesController < ApplicationController
   end
 
   private
-
-
   def recipe_params
-      params.require(:recipe).permit(:instructions, :cook_method, :cook_time, :cook_temp, :image_uri, :user_id, :hat_id, :name)
+      params.require(:recipe).permit(:instructions, :cook_method, :cook_time, :cook_temp, :image_uri, :user_id, :hat_id, :name, :ingredients, :image)
   end
+
 end
