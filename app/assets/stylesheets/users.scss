@@ -3,13 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #my-hats{
-  font-size: 40px;
+  font-size: 64px;
   display: inline-block;
   margin-right: 10px;
 }
 
 #hat{
-  max-width: 80px;
+  max-width: 100px;
   display: inline-block;
 }
 
@@ -17,17 +17,29 @@
   font-size: 24px;
 }
 
-#sign-up {
+
+.edit{
   max-width: 350px;
-
-}
-
-#edit{
   margin: 0 auto;
-  max-width: 350px;
   margin-top: 20px;
 }
 
 .img-input {
   margin: 4px 0 0 0;
+}
+
+.hats {
+  display: inline-block;
+  max-width: 200px;
+  margin: 20px;
+}
+
+#many-hats {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.center-top {
+  max-width: 200px;
+  margin: 0 auto;
 }

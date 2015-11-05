@@ -1,21 +1,26 @@
 </br>
+</br>
+<div class = "center-top">
 <h1 class = "font" id = "my-hats"> My Hats </h1>
 <span class = "font new-hat"> <%= link_to 'New Hat', new_hat_path %> </span>
+</div>
+</br>
 
-
-<table class = "table table-hover table-responsive plain-font">
+<div id = "many-hats">
 <% @hats.each do |hat| %>
-  <tr>
-    <td> <div id = "hat"> <%= image_tag 'chef_hat.png' %> </div> </td>
-    <td><%= hat.name %></td>
-    <% if current_user == @user %>
-      <td><%= link_to 'View Hat', hat %></td>
-      <% if hat.user_id == current_user.id %>
-         <td><%= link_to 'Delete Hat', hat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
-
-    <% end %>
-  </tr>
+  <div class = "hats">
+    <div id = "hat"><%= image_tag 'chef_hat.png' %></div>
     </br>
-<% end %>
-</table>
+    <% if current_user == @user %>
+      <%= link_to hat.name, hat %>
+      </br>
+    <% end %>
+    <% if hat.user_id == current_user.id %>
+       <%= link_to 'Delete Hat', hat, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    </br>
+  </div>
+ <% end %>
+</div>
+
+
