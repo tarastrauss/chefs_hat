@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
   def new
     @comment = Comment.new(comment_params)
     if @comment.save
-      flash[:notice] = "You've create a new Recipe!"
       redirect_to recipe_path(@recipe.id)
     else
       render 'new'
@@ -13,7 +12,6 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      flash[:notice] = "You've create a new Recipe!"
       redirect_to recipe_path(@comment[:recipe_id])
     else
       render 'new'
