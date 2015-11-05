@@ -2,7 +2,7 @@
 </br>
 <div class = "center-top">
 <h1 class = "font" id = "my-hats"> My Hats </h1>
-<span class = "font new-hat"> <%= link_to 'New Hat', new_hat_path %> </span>
+<span class = "font bigger"> <%= link_to 'New Hat', new_hat_path %> </span>
 </div>
 </br>
 
@@ -12,7 +12,7 @@
     <div id = "hat"><%= image_tag 'chef_hat.png' %></div>
     </br>
     <% if current_user == @user %>
-      <%= link_to hat.name, hat %>
+      <%= link_to hat.name, hat, class: "font bigger" %>
       </br>
     <% end %>
     <% if hat.user_id == current_user.id %>
