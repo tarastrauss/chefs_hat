@@ -32,7 +32,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'bootstrap_form'  # if you want bootstrap forms!
 
-gem 'paperclip', '~> 4.3', '>= 4.3.1'
+gem 'paperclip', "~> 4.3"
+
+gem 'aws-sdk', '< 2.0'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
