@@ -1,8 +1,8 @@
 # Chef's Hat!
 
-__*Recipe App designed by Tara Strauss*__
+__*Recipe Sharing App designed by Tara Strauss*__
 
-https://spooky-monster-6600.herokuapp.com/
+[Check out Chef's hat](https://spooky-monster-6600.herokuapp.com/)
 
 
 
@@ -10,7 +10,7 @@ https://spooky-monster-6600.herokuapp.com/
 
 Trello:
 
-https://trello.com/b/O60HMlP3/chef-s-hat
+[Check out my trello board](ttps://trello.com/b/O60HMlP3/chef-s-hat)
 
 ####MVP
 
@@ -35,6 +35,10 @@ https://trello.com/b/O60HMlP3/chef-s-hat
 
 ####Ice Box
 
+- As a user, I can choose what type of food I am making (appetizer, dessert, main course, etc.)
+
+- As a user, I see the recipes in my hat organized by type (appetizer, dessert, etc.)
+
 - As a user, when I add a recipe I can choose from drop down menus of specific ingredients and portions, or I can choose an unconventional ingredient or portion.
 
 - As a user, when I add a recipe I can choose from cute graphics of specific ingredients instead of a drop down/text menu.
@@ -43,15 +47,27 @@ https://trello.com/b/O60HMlP3/chef-s-hat
 
 ###ERD
 
-![alt text](http://i.imgur.com/0wu8QC4.png)
+![alt text](http://i.imgur.com/0wu8QC4.png?1)
 
 ###Technologies Used
 
-Chef's Hat will be created using Ruby on Rails, with a Postgres database that uses active record methods. HTML will be used along with bootstrap and original CSS to style. Images will be uploaded using paperclip. Pry will be used in development for troubleshooting.
+Chef's Hat will be created using Ruby on Rails, with a Postgres database that uses active record methods. HTML will be used along with bootstrap and original CSS to style. Images will be uploaded using paperclip and stored using Amazon Web Services. Pry will be used in development for troubleshooting.
 
 ###Design
 
 The design will be simple, gender-neutral and fun. A simple yellow background will be used. Default images will be google clipart labeled for resuse.
+
+The login page will be simple with only the name of the site, the tagline and a place to login or sign up:
+
+![alt text](http://i.imgur.com/L3nU08w.jpg)
+
+The hat page will allow users to click on their various different hats or delete a hat they no longer want:
+
+![alt text](http://i.imgur.com/vZals74.jpg)
+
+The recipe page will allow users to view their recipes in a nicely formatted design, including a picture:
+
+![alt text](http://i.imgur.com/WixcpAJ.jpg?2)
 
 ###Installation Instructions
 
