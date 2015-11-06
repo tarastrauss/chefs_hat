@@ -2,9 +2,15 @@
 
 __*Recipe App designed by Tara Strauss*__
 
-https://trello.com/b/O60HMlP3/chef-s-hat
+https://spooky-monster-6600.herokuapp.com/
+
+
 
 ###User Stories
+
+Trello:
+
+https://trello.com/b/O60HMlP3/chef-s-hat
 
 ####MVP
 
