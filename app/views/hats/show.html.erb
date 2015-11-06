@@ -18,6 +18,9 @@
         <% if recipe.user_id == current_user.id %>
           <%= link_to 'Edit', edit_recipe_path(:id => recipe.id) %>&nbsp;&nbsp;
           <%= link_to 'Delete', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+        <% else %>
+          </br>
         <% end %>
     </div>
   <% end %>
