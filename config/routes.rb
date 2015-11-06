@@ -18,5 +18,10 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'
 
+  post '/users/search', to: 'users#search', as: 'users_search'
+
+  if @current_user
+    root 'user#show'
+  end
 
 end

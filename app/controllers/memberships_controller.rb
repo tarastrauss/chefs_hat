@@ -1,4 +1,4 @@
-class MembershipsController < ApplicationController
+  class MembershipsController < ApplicationController
 
   def create
     @user = User.find_by(username: new_mem_params[:username])

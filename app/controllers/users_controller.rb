@@ -2,6 +2,17 @@ class UsersController < ApplicationController
   before_action :authenticate, only: [:show]
   before_action :authorize, only: [:show]
 
+  def search
+    # put search logic here
+    if params[:search]
+      @users = User.search(params[:search]).order(:created_at).reverse
+    else
+      @users = nil
+    end
+    @hat = Hat.find(params[:hat_id])
+    render 'hats/show'
+  end
+
   def new
     @user = User.new
   end
