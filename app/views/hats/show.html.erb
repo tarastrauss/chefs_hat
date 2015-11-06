@@ -68,7 +68,7 @@
   <table class = "table table-hover table-responsive">
   <% if @users %>
     <% @users.each do |user| %>
-      <p> You may add these Chef's to your hat: </p>
+
       <tr>
         <td class = "column"><%= image_tag user.image.url(:thumb), class: "profile-pic" %>
         <%= user.username %></td>

@@ -1,9 +1,10 @@
 </br>
 <div id = "recipe-box">
+  <%= link_to 'Back to hat', @hat, class: "font recipe-name sub-head right" %>
+  </br>
   <div id = "title">
     <h2 class = "font page-head recipe-name"> <%= @recipe.name %> </h2>
     <h4 class = "font recipe-name sub-head"> by <%= @user.username %></h4>
-    <%= link_to 'Back to hat', @hat, class: "font recipe-name sub-head" %>
     </br>
     <%= image_tag @recipe.image.url(:medium), class: "food-pic" %>
   </div>

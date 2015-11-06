@@ -23,6 +23,7 @@ class RecipesController < ApplicationController
 
   def edit
     @recipe = Recipe.find(params[:id])
+    @hat = Hat.find(@recipe.hat_id)
   end
 
   def update

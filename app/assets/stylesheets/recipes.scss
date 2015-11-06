@@ -4,14 +4,14 @@
 
 .recipe-name {
   display: inline-block;
-  max-width: 150px;
+  max-width: 200px;
   margin: 0 auto;
   margin-top: 0;
   margin-bottom: 10px;
 }
 
-#edit-name{
-  max-width: 80px;
+#edit-name {
+  max-width: 200px;
   margin: 0 auto;
   margin-top: 0;
   margin-bottom: 10px;
@@ -24,6 +24,8 @@
 
 #title {
   text-align: center;
+  max-width: 350px;
+  margin: 0 auto;
 }
 
 .sub-head {
@@ -43,7 +45,8 @@
   margin-bottom: 20px;
   background-color:  #C7C8BD;
   border-radius: 4px;
-  padding: 10px 6px 20px 20px;
+  padding: 10px 15px 20px 20px;
+  box-shadow: 8px 8px 8px grey;
 }
 
 .indent {
@@ -56,9 +59,9 @@
 }
 
 #comment-form{
-  margin-top: 20px;
   max-width: 600px;
   margin: 0 auto;
+  margin-top: 20px;
 }
 
 .comment {
@@ -69,4 +72,5 @@
   background-color:  #C7C8BD;
   border-radius: 4px;
   padding: 10px 6px 20px 20px;
+    box-shadow: 8px 8px 8px grey;
 }
