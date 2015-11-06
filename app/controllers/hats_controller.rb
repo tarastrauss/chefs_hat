@@ -8,8 +8,7 @@ class HatsController < ApplicationController
     @hat = current_user.hats.new(hat_params)
     if @hat.save
       @hat.memberships.create(user_id: current_user.id)
-      flash[:notice] = "You've create a new Hat!"
-      redirect_to user_path(session[:user_id]), notice: 'New hat!'
+      redirect_to user_path(session[:user_id])
     else
       render 'new'
     end
@@ -32,7 +31,7 @@ class HatsController < ApplicationController
     end
     @hat.destroy
     respond_to do |format|
-      format.html { redirect_to user_path(session[:user_id]), notice: 'Hat was successfully destroyed.' }
+      format.html { redirect_to user_path(session[:user_id]) }
       format.json { head :no_content }
     end
   end

@@ -7,7 +7,7 @@
 <h4 id = "best-place"> The best place on the web for sharing recipes!</h4>
 
 <div id = "login" class = "plain-font">
-<span id = "login-text"> Login or </span> <%= link_to 'Sign Up', new_user_path %>
+
 <p id="alert"><%= alert %></p>
 <div class = "form-group">
 <%= form_tag sessions_path do %>
@@ -21,7 +21,8 @@
     <%= password_field_tag :password, nil, class: "form-control" %>
   </div>
   </br>
-  <div class="actions"><%= submit_tag "Log in", class: "btn btn-default grey" %></div>
+  <div class="actions inline"><%= submit_tag "Log in", class: "btn btn-default grey" %></div>
+  <%= link_to 'Sign Up', new_user_path %>
 <% end %>
 </div>
 </div>

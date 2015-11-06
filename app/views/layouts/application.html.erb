@@ -15,6 +15,7 @@
 <p class = "navbar-left">
   <% if current_user %>
     <%= image_tag current_user.image.url(:thumb), class: "profile-pic" %>
+    &nbsp;
     Welcome, Chef <%= current_user.username %>
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <%= link_to 'Logout', session_path('dummy'), method: :delete %>

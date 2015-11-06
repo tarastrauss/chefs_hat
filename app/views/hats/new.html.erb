@@ -14,12 +14,10 @@
       </ul>
     </div>
   <% end %>
-  <div class="field ">
-    <%= f.label :name %>
+  <div class="field">
     <%= f.text_field :name, class: "form-control form-custom inline" %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
-
-  <div class="actions inline"><%= f.submit class: "btn btn-default grey inline"%><% end %></div>
+    <div class="actions "><%= f.submit class: "btn btn-default grey inline"%><% end %></div>
   </div>
   </br>
 </div>

@@ -6,16 +6,46 @@
   font-size: 30px;
 }
 
-.column {
-  max-width: 40px;
-  text-align:left;
+#chefs {
+  max-width: 500px;
+  margin: 0 auto;
 }
+
+#new-chefs {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
 
 .inline {
   display: inline-block;
   padding: 2px;
 }
 
-.center {
+.small-pic {
+  max-width: 200px;
+  border-radius: 6px;
+}
+
+.recipe {
+  display: inline-block;
+  max-width: 200px;
+  margin: 20px;
   text-align: center;
 }
+
+.center-form{
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+#recipe-display {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.center {
+  text-align: center;
+  font-size: 44px;
+}
+

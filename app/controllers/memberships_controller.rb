@@ -12,7 +12,6 @@
           flash.now[:notice] = "You've already added that chef!"
         else
           @new_mem.save
-          flash.now[:notice] = "You've added a new chef!"
         end
       end
       # redirect_to :controller => 'hats', :action => 'show', :id => @hat.id
@@ -31,7 +30,7 @@
       @membership.destroy
 
       respond_to do |format|
-        format.html { redirect_to hat_path(@membership.hat_id), notice: 'Chef was successfully removed.' }
+        format.html { redirect_to hat_path(@membership.hat_id) }
         format.json { head :no_content }
       end
 
