@@ -10,7 +10,7 @@ __*Recipe Sharing App designed by Tara Strauss*__
 
 Trello:
 
-[Check out my trello board](ttps://trello.com/b/O60HMlP3/chef-s-hat)
+[Check out my trello board](https://trello.com/b/O60HMlP3/chef-s-hat)
 
 ####MVP
 
