@@ -3,8 +3,9 @@
 <% if flash[:notice] %>
   <p><%= flash[:notice] %> </p>
 <% end %>
-<h2 class = "font page-head"> <%= @hat.name %> Chef's Hat </h2>
-
+</br>
+<p class = "font bigger center" id = "wearing"> You're wearing the </p>
+<h2 class = "font page-head"> <%= @hat.name %> Chef's Hat <%= image_tag 'chef_hat.png', class: "header profile-pic" %></h2>
 </br>
 <h4 class = "font center"> Recipes </h4>
 <p class = "font bigger center"> Add and view recipes in this hat! </p>
