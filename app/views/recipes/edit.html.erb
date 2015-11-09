@@ -7,6 +7,10 @@
   <h1 class = "font page-head" id = "edit-name"><%= @recipe.name %></h1>
   <%= form_for @recipe do |f| %>
   <div class="field plain-font">
+    <%= f.label :name, placeholder: @recipe.name %>
+    <%= f.text_field :name, class: "form-control form-custom right" %>
+  </div>
+  <div class="field plain-font">
     <%= f.label :ingredients %>
     <%= f.text_area :ingredients, :cols => "60", :rows => "10", class: "form-control  " %>
   </div>
