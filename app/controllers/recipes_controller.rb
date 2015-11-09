@@ -37,7 +37,6 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
-
     respond_to do |format|
       format.html { redirect_to hat_path(@recipe.hat_id) }
       format.json { head :no_content }

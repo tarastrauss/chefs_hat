@@ -43,9 +43,9 @@
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color:  #C7C8BD;
   border-radius: 4px;
   padding: 10px 15px 20px 20px;
+  background-color:  #C7C8BD;
   box-shadow: 8px 8px 8px grey;
 }
 
@@ -71,6 +71,10 @@
   margin-bottom: 10px;
   background-color:  #C7C8BD;
   border-radius: 4px;
-  padding: 10px 6px 20px 20px;
-    box-shadow: 8px 8px 8px grey;
+  padding: 10px 20px 20px 20px;
+  box-shadow: 8px 8px 8px grey;
+}
+
+.comment_title {
+  display: inline-block;
 }

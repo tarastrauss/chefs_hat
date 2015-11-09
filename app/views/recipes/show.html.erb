@@ -24,7 +24,11 @@
 <% @comments.each do |comment| %>
   <% user = comment.user %>
   <div class = "comment">
-    <p> Tip from Chef <%= user.username %> at <%= comment.created_at %> </p>
+    <p class = "comment_title"> Tip from Chef <%= user.username %> posted <%= time_ago_in_words(comment.created_at) %> ago </p>
+    <% if comment.user_id == current_user.id %>
+      <%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' }, class: "comment_title right" %>
+    <% end %>
+    </br>
     <%= comment.content %>
   </div>
 <% end %>

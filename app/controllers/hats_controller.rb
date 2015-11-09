@@ -22,7 +22,6 @@ class HatsController < ApplicationController
     @recipe = Recipe.new
   end
 
-
   def destroy
     @hat = Hat.find(params[:id])
     @memberships = Membership.where(hat_id: @hat.id)
@@ -37,8 +36,6 @@ class HatsController < ApplicationController
   end
 
   private
-
-
 
   def hat_params
       params.require(:hat).permit(:name, :user_id)

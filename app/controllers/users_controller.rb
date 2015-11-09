@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   before_action :authorize, only: [:show]
 
   def search
-    # put search logic here
     if params[:search]
       @users = User.search(params[:search]).order(:created_at).reverse
     else
@@ -20,30 +19,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "You have successfully signed up!"
       redirect_to root_path
     else
       render 'new'
     end
   end
-
-
-  # def destroy
-
-  #   @hats = Hat.where(user_id: current_user.id)
-  #   @memberships = Membership.where(user_id: current_user.id)
-  #   @memberships.each do |membership|
-  #     membership.destroy
-  #   end
-  #   @hats.each do |hat|
-  #     hat.destroy
-  #   end
-  #   User.find(params[:id]).delete
-  #   session[:user_id] = nil
-  #   flash[:notice] = 'Account Deleted'
-  #   redirect_to root_path
-  # end
-  # <%= button_to 'Delete Account', user_path, method: :delete %>
 
   def edit
     @user = User.find(params[:id])
@@ -52,7 +32,6 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:notice] = "You have successfully updated your profile!"
       redirect_to edit_user_path
     else
       render 'new'
@@ -76,7 +55,7 @@ class UsersController < ApplicationController
 
   def authorize
     @user = User.find(params[:id])
-    redirect_to user_path(session[:user_id]), alert: 'You can only view your own hats!' if @user != current_user
+    redirect_to user_path(session[:user_id]) if @user != current_user
   end
 
 end
